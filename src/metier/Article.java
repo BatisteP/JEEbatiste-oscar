@@ -4,6 +4,13 @@ public class Article {
 	private int num;
 	private String libelle;
 	private double price;
+	private int quantite;
+	public int getQuantite() {
+		return quantite;
+	}
+	public void setQuantite(int quantite) {
+		this.quantite = quantite;
+	}
 	public int getNum() {
 		return num;
 	}

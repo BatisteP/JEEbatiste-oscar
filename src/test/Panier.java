@@ -1,6 +1,8 @@
 package test;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,9 +41,14 @@ public class Panier extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		String user = (String) request.getAttribute("user");
 		HttpSession session = request.getSession(true);
+		System.out.println("panierdopost");
 		Caddy basket = new Caddy();
-		
+		session.setAttribute ( "user" , user ) ;
+		session.setAttribute ( "caddy", basket ) ;
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/Hola.jsp") ;
+		requestDispatcher.forward(request, response) ;
 	
 		
 	}

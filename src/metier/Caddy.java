@@ -1,10 +1,17 @@
 package metier;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Caddy {
-	private HashMap<Integer, Article> bask;
+	private ArrayList<Article> produits;
 	public Caddy() {
-		bask = new HashMap<Integer,Article>();
+		setProduits(new ArrayList<Article>());
+	}
+	public ArrayList<Article> getProduits() {
+		return produits;
+	}
+	public void setProduits(ArrayList<Article> produits) {
+		this.produits = produits;
 	}
 }

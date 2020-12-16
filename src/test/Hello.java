@@ -42,6 +42,7 @@ public class Hello extends HttpServlet {
 		String password = request.getParameter("password");
 		Pangolin p = new Pangolin(user,"07/08/1998");
 		request.setAttribute("pango", p);
+		request.setAttribute("user", user);
 		request.setAttribute("password", password);
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/panier") ;
 	    
