@@ -1,4 +1,4 @@
-package test;
+package servlets;
 
 public class Pangolin {
 

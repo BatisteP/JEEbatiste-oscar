@@ -17,9 +17,9 @@ public class AffichageContenuPanier extends SimpleTagSupport {
 		return this.username;
 	}
 	public void doTag() throws JspException, IOException{
+		PageContext PCprincipal = (PageContext) getJspContext();
+		HttpSession session = PCprincipal.getSession();
 		
-		HttpServletRequest request = (HttpServletRequest) ((PageContext) getJspContext()).getRequest();
-	    HttpSession session = request.getSession();
 		
 		
 		Caddy caddy = (Caddy) session.getAttribute("Caddy");

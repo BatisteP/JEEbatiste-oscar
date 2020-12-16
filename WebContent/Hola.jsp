@@ -8,6 +8,7 @@
 </head>
 <body>
 <% %>
+<jsp:directive.page import="metier.*"/>
 <jsp:declaration> int a = 3;</jsp:declaration>
 
 <jsp:scriptlet>// String name = (String) session.getattributes("username");</jsp:scriptlet>
@@ -25,13 +26,28 @@
 </jsp:useBean>
 <h3>Bonjour 
 <jsp:expression >(String) session.getAttribute("user")</jsp:expression>
+<jsp:declaration> DB db = new DB();</jsp:declaration>
  Voici les articles disponibles 
  : </h3>
+<jsp:declaration> Article flute = (db).findArticle(19872);</jsp:declaration>
+<jsp:declaration> Article piano = (db).findArticle(12345);</jsp:declaration>
 <table><tr>
 <td>numero d'article</td>
 <td>Designation</td>
 <td>Prix de un</td></tr>
+
 <tr>
+<td><jsp:expression >piano.getNum()</jsp:expression></td>
+<td><jsp:expression >piano.getLibelle()</jsp:expression></td>
+<td><jsp:expression >piano.getPrice()</jsp:expression></td>
+</tr>
+
+<tr>
+<td><jsp:expression >flute.getNum()</jsp:expression></td>
+<td><jsp:expression >flute.getLibelle()</jsp:expression></td>
+<td><jsp:expression >flute.getPrice()</jsp:expression></td>
+</tr>
+<!--
 <td><jsp:getProperty name="piano" property="num"/></td>
 <td><jsp:getProperty name="piano" property="libelle"/></td>
 <td><jsp:getProperty name="piano" property="price"/></td>
@@ -41,6 +57,7 @@
 <td><jsp:getProperty name="flute" property="num"/></td>
 <td><jsp:getProperty name="flute" property="libelle"/></td>
 <td><jsp:getProperty name="flute" property="price"/></td>
+-->
 	
 </tr>
 
@@ -48,6 +65,6 @@
 
 </table>
 
-
+<h3>contenu de votre panier</h3>
 </body>
 </html>
