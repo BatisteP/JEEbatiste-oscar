@@ -1,4 +1,4 @@
-package web;
+package test;
 
 import java.io.IOException;
 
@@ -43,7 +43,7 @@ public class Hello extends HttpServlet {
 		Pangolin p = new Pangolin(user,"07/08/1998");
 		request.setAttribute("pango", p);
 		request.setAttribute("password", password);
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/next") ;
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/panier") ;
 	    
 	     // redirection de la requête vers cette ressource
 	    requestDispatcher.forward(request, response) ;

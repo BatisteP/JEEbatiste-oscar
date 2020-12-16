@@ -13,11 +13,11 @@
 <jsp:scriptlet>// String name = (String) session.getattributes("username");</jsp:scriptlet>
 <jsp:expression>a </jsp:expression>
 <jsp:useBean id="onePerson" class="metier.Person">
-	<jsp:setProperty name="onePerson" property="name" value = "Dupont">
-	<jsp:setProperty name="onePerson" property="deceased" value = true">
+	<jsp:setProperty name="onePerson" property="name" value = "Dupont" />
+	<jsp:setProperty name="onePerson" property="deceased" value = "true" />
 </jsp:useBean>
 M.
-<jsp:getProperty name="onePerson" property="name">
+<jsp:getProperty name="onePerson" property="name"/>
 is
 <jsp:scriptlet>
 	if(onePerson.isDeceased()){
@@ -28,6 +28,6 @@ is
 		
 	}
 </jsp:scriptlet>
-Hello Mr. ${}.
+
 </body>
 </html>

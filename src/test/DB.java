@@ -1,4 +1,4 @@
-package web;
+package test;
 
 public class DB {
 

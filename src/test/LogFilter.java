@@ -1,9 +1,10 @@
-package web;
+package test;
 
 import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -39,7 +40,16 @@ public class LogFilter implements Filter {
 		// pass the request along the filter chain
 		//filterChain.doFilter(request,response);
 		
+		String user = request.getParameter("user");
+		String password = request.getParameter("password");
+		System.out.println(user+password);
+		//if (user.equals("batiste")&& password.equals("1234") ) {
+		//	
+		//}
+		//else {RequestDispatcher requestDispatcher = request.getRequestDispatcher("/ErrorUsername.jsp") ;}
 		chain.doFilter(request, response);
+		
+		
 	}
 
 	/**
