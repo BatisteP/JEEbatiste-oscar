@@ -23,7 +23,10 @@
 	<jsp:setProperty name="flute" property="libelle" value = "flute à bec" />
 	<jsp:setProperty name="flute" property="price" value = "12.99" />
 </jsp:useBean>
-<h3>Contenu du panier de "+username+" : </h3>
+<h3>Bonjour 
+<jsp:expression >(String) session.getAttribute("user")</jsp:expression>
+ Voici les articles disponibles 
+ : </h3>
 <table><tr>
 <td>numero d'article</td>
 <td>Designation</td>
@@ -41,13 +44,10 @@
 	
 </tr>
 
-</tr>
+
 
 </table>
-<jsp:getProperty name="onePerson" property="name"/>
-is
 
-</jsp:scriptlet>
 
 </body>
 </html>
